@@ -1,0 +1,25 @@
+parameters:
+    gos_mailer_bundle_transport_manager: Gos\Bundle\MailerBundle\Manager\Transport\MailTransportManager
+    gos_mailer_bundle_mail_registry: Gos\Bundle\MailerBundle\Manager\Transport\MailRegistry
+    gos_mailer_bundle_maill_factory: Gos\Bundle\MailerBundle\Manager\Transport\MailFactory
+
+services:
+    gos.mailer_bundle.mail_transport.manager:
+        class: %gos_mailer_bundle_transport_manager%
+        public: false
+        calls:
+            - [ 'setEngine', [ @templating ] ]
+            - [ 'setMailer', [ @mailer ] ]
+            - [ 'setEmailServices', [ %email_provider% ] ]
+            - [ 'setTranslator', [ @translator ] ]
+            - [ 'setEventDispatcher', [ @event_dispatcher ] ]
+
+    gos.mailer_bundle.mail.registry:
+        class: %gos_mailer_bundle_mail_registry%
+        public: false
+
+    gos.mailer_bundler.mail.factory:
+        class: %gos_mailer_bundle_maill_factory%
+        public: false
+        arguments:
+            - @gos.mailer_bundle.mail.registry
