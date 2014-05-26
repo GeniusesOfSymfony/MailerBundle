@@ -1,4 +1,4 @@
-#Gos I18n Bundle#
+#Gos Mailer Bundle#
 
 @TODO
 
