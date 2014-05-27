@@ -1,6 +1,33 @@
 #Gos Mailer Bundle#
 
-@TODO
+[![Build Status](https://travis-ci.org/GeniusesOfSymfony/MailerBundle.svg?branch=master)](https://travis-ci.org/GeniusesOfSymfony/MailerBundle) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/GeniusesOfSymfony/MailerBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/GeniusesOfSymfony/MailerBundle/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/GeniusesOfSymfony/MailerBundle/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/GeniusesOfSymfony/MailerBundle/?branch=master)
+
+**This project is currently in developpement, please take care.**
+
+Installation
+-------------
+
+You need to have [composer](https://getcomposer.org/) to install dependencies.
+
+```json
+{
+    "require": {
+        "gos/mailer-bundle": "{last stable version}"
+    }
+}
+```
+
+Then run the command on the root of your project`composer update`
+
+Add this line in your `AppKernel.php`
+
+```php
+$bundles = array(
+
+	//Other bundles
+    new Gos\Bundle\MailerBundle\GosMailerBundle(),
+);
+```
 
 Running the tests:
 ------------------
