@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/GeniusesOfSymfony/MailerBundle.svg?branch=master)](https://travis-ci.org/GeniusesOfSymfony/MailerBundle) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/GeniusesOfSymfony/MailerBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/GeniusesOfSymfony/MailerBundle/?branch=master) [![Code Coverage](https://scrutinizer-ci.com/g/GeniusesOfSymfony/MailerBundle/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/GeniusesOfSymfony/MailerBundle/?branch=master)
 
-**This project is currently in developpement, please take care.**
+**This project is currently in development, please take care.**
 
 Installation
 -------------
