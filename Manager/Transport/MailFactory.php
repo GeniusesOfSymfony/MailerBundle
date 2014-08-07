@@ -10,6 +10,11 @@ class MailFactory
         $this->mailRegistry = $mailRegistry;
     }
 
+    /**
+     * @param string $mailName
+     *
+     * @return MailInterface
+     */
     public function createNamed($mailName)
     {
         return $this->mailRegistry->getMail($mailName);

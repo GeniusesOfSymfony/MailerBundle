@@ -14,6 +14,9 @@ class FactoryType
         $this->builderOptions = $builderOptions;
     }
 
+    /**
+     * @param string $type
+     */
     public function createType($type, Array $options = array())
     {
         switch ($type) {

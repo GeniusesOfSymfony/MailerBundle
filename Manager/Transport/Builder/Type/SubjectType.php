@@ -6,6 +6,9 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class SubjectType extends AbstractType
 {
+    /**
+     * @param string $data
+     */
     public function process(BuilderMessageInterface $message, $data)
     {
         $optionsResolver = new OptionsResolver($this->options);

@@ -14,7 +14,7 @@
     {
         "php": ">=5.3.0",
         "sensio/framework-extra-bundle": "~3.0",
-        "gos/doctrine-bundle": "self.version"
+        "gos/doctrine-bundle": "dev-master"
     },
     "autoload": {
         "psr-0": { "Gos\\Bundle\\MailerBundle\\": "" }
