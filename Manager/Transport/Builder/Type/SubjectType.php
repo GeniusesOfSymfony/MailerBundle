@@ -13,17 +13,17 @@ class SubjectType extends AbstractType
     {
         $optionsResolver = new OptionsResolver($this->options);
 
-        $optionsResolver->setDefaults(array(
+        $optionsResolver->setDefaults([
             'translation_domain' => null,
             'locale' => null,
-            'parameters' => array()
-        ));
+            'parameters' => []
+        ]);
 
-        $optionsResolver->setAllowedTypes(array(
-            'translation_domain' => array('string', 'null'),
-            'locale' => array('string', 'null'),
-            'parameters' => array('array')
-        ));
+        $optionsResolver->setAllowedTypes([
+            'translation_domain' => ['string', 'null'],
+            'locale' => ['string', 'null'],
+            'parameters' => ['array']
+        ]);
 
         $message->setSubject($data, $optionsResolver->resolve($this->options));
     }

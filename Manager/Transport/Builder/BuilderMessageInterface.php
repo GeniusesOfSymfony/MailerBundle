@@ -32,7 +32,7 @@ interface BuilderMessageInterface
      * @param  string $subject
      * @return void
      */
-    public function setSubject($subject, Array $options = array());
+    public function setSubject($subject, array $options = []);
 
     /**
      * @return string

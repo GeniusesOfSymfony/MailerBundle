@@ -9,7 +9,7 @@ class FactoryType
 {
     protected $builderOptions;
 
-    public function __construct(Array $builderOptions)
+    public function __construct(array $builderOptions)
     {
         $this->builderOptions = $builderOptions;
     }
@@ -17,7 +17,7 @@ class FactoryType
     /**
      * @param string $type
      */
-    public function createType($type, Array $options = array())
+    public function createType($type, array $options = [])
     {
         switch ($type) {
             case 'from' :

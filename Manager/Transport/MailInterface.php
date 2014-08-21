@@ -6,7 +6,7 @@ interface MailInterface
     /**
      * @return Builder\MailBuilder
      */
-    public function getBuilder(Array $options = array());
+    public function getBuilder(array $options = []);
 
     /**
      * @return string

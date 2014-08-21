@@ -6,8 +6,8 @@ use Symfony\Component\Translation\Translator;
 class BuilderMessage implements BuilderMessageInterface
 {
     protected $subject;
-    protected $from = array();
-    protected $to = array();
+    protected $from = [];
+    protected $to = [];
     protected $translator;
     protected $renderOptions;
 
@@ -43,7 +43,7 @@ class BuilderMessage implements BuilderMessageInterface
 
     protected function renderFrom($emailService)
     {
-        $buffer = array();
+        $buffer = [];
         foreach ($this->from as $email => $name) {
 
             if (isset($emailService[$email])) {
@@ -74,7 +74,7 @@ class BuilderMessage implements BuilderMessageInterface
         return $this->from;
     }
 
-    public function setSubject($subject, Array $options = array())
+    public function setSubject($subject, array $options = [])
     {
         $this->renderOptions['subject'] = $options;
         $this->subject = $subject;

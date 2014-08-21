@@ -10,10 +10,10 @@ class Mail implements MailInterface
 {
     private $options;
 
-    public function finishView(Array $options)
+    public function finishView(array $options)
     {
         //stub implement if needed
-        return array();
+        return [];
     }
 
     public function getName()
@@ -22,7 +22,7 @@ class Mail implements MailInterface
         return '';
     }
 
-    protected function buildMail(MailBuilderInterface $builder, Array $options)
+    protected function buildMail(MailBuilderInterface $builder, array $options)
     {
         //stub implement if needed
     }
@@ -34,23 +34,23 @@ class Mail implements MailInterface
 
     protected function setOptions(OptionsResolverInterface $resolver)
     {
-        $resolver->setRequired(array(
+        $resolver->setRequired([
             'template'
-        ));
+        ]);
 
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'content_type' => 'text/html'
-        ));
+        ]);
 
-        $resolver->setAllowedTypes(array(
-            'content_type' => array('string'),
-            'template' => array('string')
-        ));
+        $resolver->setAllowedTypes([
+            'content_type' => ['string'],
+            'template' => ['string']
+        ]);
 
         $this->setDefaultOptions($resolver);
     }
 
-    public function getBuilder(Array $options = array())
+    public function getBuilder(array $options = [])
     {
         $optionsResolver = new OptionsResolver();
 

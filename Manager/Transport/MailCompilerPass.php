@@ -18,7 +18,7 @@ class MailCompilerPass implements CompilerPassInterface
         $taggedServices = $container->findTaggedServiceIds('mail');
 
         foreach ($taggedServices as $id => $taggedAttributes) {
-            $definition->addMethodCall('addMail', array(new Reference($id)));
+            $definition->addMethodCall('addMail', [new Reference($id)]);
         }
     }
 }

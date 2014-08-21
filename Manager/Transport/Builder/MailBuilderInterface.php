@@ -1,26 +1,28 @@
 <?php
 namespace Gos\Bundle\MailerBundle\Manager\Transport\Builder;
 
-use Symfony\Bundle\FrameworkBundle\Translation\Translator;
 use Symfony\Component\Templating\EngineInterface;
+use Symfony\Component\Translation\TranslatorInterface;
 
 interface MailBuilderInterface
 {
     /**
-     * @return void
+     * @param TranslatorInterface $translator
      */
-    public function setTranslator(Translator $translator);
+    public function setTranslator(TranslatorInterface $translator);
 
     /**
-     * @param string $type
-     * @param string $data
+     * @param       $type
+     * @param       $data
+     * @param array $options
+     */
+    public function add($type, $data, array $options = []);
+
+    /**
+     * @param EngineInterface $engine
+     * @param                 $emailProvider
      *
-     * @return void
-     */
-    public function add($type, $data, Array $options = array());
-
-    /**
-     * @return \Swift_Message
+     * @return mixed
      */
     public function render(EngineInterface $engine, $emailProvider);
 }

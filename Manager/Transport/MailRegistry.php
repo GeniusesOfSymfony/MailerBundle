@@ -9,7 +9,7 @@ class MailRegistry implements MailRegistryInterface
 
     public function __construct()
     {
-        $this->mails = array();
+        $this->mails = [];
     }
 
     public function addMail(MailInterface $mail)
