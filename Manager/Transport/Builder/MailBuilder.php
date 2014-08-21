@@ -3,17 +3,45 @@ namespace Gos\Bundle\MailerBundle\Manager\Transport\Builder;
 
 use Symfony\Bundle\FrameworkBundle\Translation\Translator;
 use Symfony\Component\Templating\EngineInterface;
+use Symfony\Component\Translation\TranslatorInterface;
 
 class MailBuilder implements MailBuilderInterface
 {
+    /**
+     * @var BuilderMessage
+     */
     protected $builderMessage;
+
+    /**
+     * @var FactoryType
+     */
     protected $factoryType;
+
+    /**
+     * @var array
+     */
     protected $options;
+
+    /**
+     * @var array
+     */
     protected $templateData;
-    protected $tranlsator;
+
+    /**
+     * @var TranslatorInterface
+     */
+    protected $translator;
+
+    /**
+     * @var array
+     */
     protected $subjectParameters;
 
-    public function __construct(Array $options, Array $templateData = array())
+    /**
+     * @param array $options
+     * @param array $templateData
+     */
+    public function __construct(array $options, array $templateData = [])
     {
         $this->options = $options;
         $this->builderMessage = new BuilderMessage();
@@ -21,20 +49,34 @@ class MailBuilder implements MailBuilderInterface
         $this->templateData = $templateData;
     }
 
-    public function setTranslator(Translator $translator)
+    /**
+     * @param TranslatorInterface $translator
+     */
+    public function setTranslator(TranslatorInterface $translator)
     {
         $this->tranlsator = $translator;
     }
 
-    public function add($type, $data, Array $options = array())
+    /**
+     * @param string $type
+     * @param string $data
+     * @param array  $options
+     */
+    public function add($type, $data, array $options = [])
     {
         $type = $this->factoryType->createType($type, $options);
         $type->process($this->builderMessage, $data);
     }
 
+    /**
+     * @param EngineInterface $engine
+     * @param                 $emailServices
+     *
+     * @return \Swift_Message
+     */
     public function render(EngineInterface $engine, $emailServices)
     {
-        $this->builderMessage->setTranslator($this->tranlsator);
+        $this->builderMessage->setTranslator($this->translator);
 
         $swiftMessage = $this->builderMessage->render($emailServices);
         $swiftMessage->setBody($engine->render($this->options['template'], $this->templateData));
