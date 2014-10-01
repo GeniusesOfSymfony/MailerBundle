@@ -17,9 +17,11 @@
         "gos/doctrine-bundle": "~1.0@dev"
     },
     "autoload": {
-        "psr-0": { "Gos\\Bundle\\MailerBundle\\": "" }
+        "psr-4": { "Gos\\Bundle\\MailerBundle\\": "" }
     },
-    "target-dir": "Gos/Bundle/MailerBundle",
+    "autoload-dev": {
+        "psr-4": { "Gos\\Bundle\\MailerBundle\\Tests\\": "/Tests" }
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "1.0.x-dev"
